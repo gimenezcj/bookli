@@ -2,6 +2,12 @@
 
 Aplicación utilizada en la cursada 2020 de Ingenieria de Software. UTN-FRLP
 
+## Grupo
+Grupo numero 10
+
+## Integrantes
+Gimenez, Javier Clemente (legajo 20287)
+
 ## Dependencias
 
  - node > v10
