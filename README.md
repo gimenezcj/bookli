@@ -7,7 +7,7 @@ Grupo numero **10**
 
 ## Integrantes
 * Gimenez, Javier Clemente (legajo 20287)
-* Cascallares, Valeria (legajo 15501)
+* Cascallares, Valeria (legajo 15501-4)
 
 ## Dependencias
 
