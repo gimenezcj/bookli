@@ -11,8 +11,8 @@ Grupo numero **10**
 
 ## Dependencias
 
- - node > v10
- - express > v4
+-   node > v10
+-   express > v4
 
 ## Instalar dependencias
 
