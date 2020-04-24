@@ -10,6 +10,9 @@
     transition: opacity 0.3s;
     cursor: pointer;
 }
+.book__cover:hover {
+  opacity: 0.8;
+}
 
 .book-link {
     all: unset;
