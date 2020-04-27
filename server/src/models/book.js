@@ -62,6 +62,10 @@ const Book = db.define(
             allowNull: false,
             values: [AVAILABLE, READING, FINISHED],
         },
+       rate: {
+           type: Sequelize.INTEGER,
+           allowNull: false,
+       },
     },
     { tableName: 'Book' }
 );
@@ -179,6 +183,20 @@ const finishBook = (id) => {
     });
 };
 
+/**
+ * Cambiar la calificacion de un libro.
+ * Parámetro id: id a buscar en la base de datos y rate como su nueva calificacion.
+ *
+ */
+const rateBook = (id,rate) => {
+  return Book.findOne({ where: { id: id } }).then((book) => {
+      if (book != null) {
+          return book.update({ rate: rate });
+      }
+      return null;
+  });
+};
+
 const BookModel = {
     Book: Book,
     status: status,
@@ -188,6 +206,7 @@ const BookModel = {
     start: startBook,
     makeAvailable: makeBookAvailable,
     finish: finishBook,
+    rate: rateBook,
 };
 
 module.exports = BookModel;
