@@ -28,7 +28,7 @@ output += "</span>.\n            </p>\n            <p>\n                Es un li
 }
 output += "\n    </div>\n\n    ";
 if(runtime.contextOrFrameLookup(context, frame, "detail")) {
-output += "\n    <div class=\"book__actions\">\n        ";
+output += "\n\n\n    <div class=\"book__actions\">\n        ";
 if(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "book")),"status") == "AVAILABLE") {
 output += "\n        <button class=\"btn btn-primary\" data-ref=\"addToList\">\n            Empezar a leer\n        </button>\n        ";
 ;
@@ -42,10 +42,8 @@ output += " ";
 if(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "book")),"status") == "FINISHED") {
 output += "\n        <button class=\"btn btn-danger\" data-ref=\"removeFromFinish\">\n            Volver a leer\n        </button>\n        ";
 ;
-
 }
-output += "\n        <button class=\"btn btn-danger\"  onclick=\"location.href='/'\" >\n            Volver\n        </button>\n        "; 
-output += "\n    </div>\n    ";
+output += "\n        <button class=\"btn btn-warning\"  onclick=\"location.href='/'\" >Atras</button>\n    </div>\n\n    ";
 ;
 }
 output += "\n</div>\n";
