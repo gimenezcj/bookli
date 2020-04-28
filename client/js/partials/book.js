@@ -23,7 +23,9 @@ output += "</span> por la editorial\n                <span class=\"highlight\">"
 output += runtime.suppressValue(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "book")),"publisher"), env.opts.autoescape);
 output += "</span>.\n            </p>\n            <p>\n                La primera edición se realizo en\n                <span class=\"highlight\">";
 output += runtime.suppressValue(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "book")),"country"), env.opts.autoescape);
-output += "</span>.\n            </p>\n            <p>\n                Es un libro perteneciente a los géneros\n                <span class=\"highlight\"></span>.\n            </p>\n        </div>\n        ";
+output += "</span>.\n            </p>\n            <p>\n                Es un libro perteneciente a los géneros\n                <span class=\"highlight\">";
+output += runtime.suppressValue(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "book")),"genres"), env.opts.autoescape);
+output += "</span>.\n            </p>\n        </div>\n        ";
 ;
 }
 output += "\n    </div>\n\n    ";
