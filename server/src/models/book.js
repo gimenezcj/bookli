@@ -62,6 +62,9 @@ const Book = db.define(
             allowNull: false,
             values: [AVAILABLE, READING, FINISHED],
         },
+        country: {
+            type: Sequelize.STRING,
+        },
     },
     { tableName: 'Book' }
 );
