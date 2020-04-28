@@ -30,6 +30,8 @@
     </div>
 
     {% if detail %}
+
+
     <div class="book__actions">
         {% if book.status == 'AVAILABLE' %}
         <button class="btn btn-primary" data-ref="addToList">
@@ -47,6 +49,8 @@
             Volver a leer
         </button>
         {% endif %}
+        <button class="btn btn-warning"  onclick="location.href='/'" >Atras</button>
     </div>
+
     {% endif %}
 </div>
