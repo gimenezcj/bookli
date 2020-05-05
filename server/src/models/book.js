@@ -67,7 +67,7 @@ const Book = db.define(
         },
         rate: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
     },
     { tableName: 'Book' }
