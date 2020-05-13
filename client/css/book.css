@@ -10,6 +10,9 @@
     transition: opacity 0.3s;
     cursor: pointer;
 }
+.book__cover:hover {
+  opacity: 0.8;
+}
 
 .book-link {
     all: unset;
@@ -72,6 +75,7 @@
         grid-template-areas:
             'cover header'
             'cover body'
+            'cover rate'
             'action action';
     }
 
@@ -95,4 +99,9 @@
 .highlight {
     display: inline-block;
     border-bottom: 2px dotted var(--primary);
+}
+
+.book__rate {
+    grid-area: rate;
+    margin: var(--space-2);
 }
