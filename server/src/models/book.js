@@ -62,10 +62,13 @@ const Book = db.define(
             allowNull: false,
             values: [AVAILABLE, READING, FINISHED],
         },
-       rate: {
-           type: Sequelize.INTEGER,
-           allowNull: false,
-       },
+        country: {
+            type: Sequelize.STRING,
+        },
+        rate: {
+            type: Sequelize.INTEGER,
+            allowNull: true,
+        },
     },
     { tableName: 'Book' }
 );

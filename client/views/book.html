@@ -23,7 +23,7 @@
             </p>
             <p>
                 Es un libro perteneciente a los géneros
-                <span class="highlight"></span>.
+                <span class="highlight">{{ book.genres }}</span>.
             </p>
         </div>
         {% endif %}
@@ -65,6 +65,8 @@
             Volver a leer
         </button>
         {% endif %}
+        <button class="btn btn-warning"  onclick="location.href='/'" >Atras</button>
     </div>
+
     {% endif %}
 </div>
