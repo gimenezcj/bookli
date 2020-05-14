@@ -160,3 +160,16 @@ describe('Detail view', () => {
             .text.to.equal('Volver a leer');
     });
 });
+
+describe('features', () => {
+
+    test('feature/#3: Hacer click en el boton atras y volver', browser => {
+      browser
+          .url(BASE_URL + '/detail/1')
+          .waitForElementVisible('body')
+          .waitForElementVisible('.book__actions [data-ref=back]')
+          .click('.book__actions [data-ref=back]')
+          .pause(400);
+        browser.assert.urlEquals(BASE_URL + '/');
+    });
+});
