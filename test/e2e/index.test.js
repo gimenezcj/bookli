@@ -161,7 +161,7 @@ describe('Detail view', () => {
     });
 });
 
-describe('Features', () => {
+describe('features', () => {
     test('feature/#4: Deberia poder agregar la calificacion a un libro en estado FINALIZADO ', browser => {
         browser
             .url(BASE_URL + '/detail/1')
