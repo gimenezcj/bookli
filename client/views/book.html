@@ -30,6 +30,24 @@
     </div>
 
     {% if detail %}
+    {% if book.status == 'FINISHED' %}
+    <div class="book__rate">
+      {% if book.rate == 0 %}
+      <div class="rate">
+        <p><span>Por favor, califiqueme!</span></p>
+        {% for i in ['Genial','Muy interesante','Bueno','Podria ser peor','Malo'] %}
+        <input type="radio" id="star{{ 5-loop.index0 }}" name="rate" value="{{ 5-loop.index0 }}" {% if book.rate==(5-loop.index0) %} checked {% endif %} data-ref="rate{{ 5-loop.index0 }}"/>
+        <label for="star{{ 5-loop.index0 }}" title="{{ i }}">{{ 5-loop.index0 }} stars</label>
+        {% endfor %}
+      </div>
+      {% else %}
+          <span name="rate">Este libro {{ ['es Genial','es Muy interesante','esta Bueno','Podria ser peor','es Malo'][5-book.rate] }}</span>
+      {% endif %}
+    </div>
+
+
+    {% endif %}
+
     <div class="book__actions">
         {% if book.status == 'AVAILABLE' %}
         <button class="btn btn-primary" data-ref="addToList">
@@ -47,6 +65,8 @@
             Volver a leer
         </button>
         {% endif %}
+        <button class="btn btn-warning"  onclick="location.href='/'" >Atras</button>
     </div>
+
     {% endif %}
 </div>

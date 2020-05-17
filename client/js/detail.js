@@ -24,6 +24,7 @@ function getBookId(str) {
  * Actualiza el libro y la UI
  **/
 async function addToReadingList() {
+    await bookService.rateBook(state.book.id,0);
     await bookService.startBook(state.book.id);
     state.book = await bookService.get(state.book.id);
 
@@ -49,6 +50,12 @@ async function addToFinishList() {
     renderBook(state.book);
 }
 
+async function rate(rate) {
+    await bookService.rateBook(state.book.id,rate);
+    state.book = await bookService.get(state.book.id);
+
+    renderBook(state.book);
+}
 /**
  * Actualiza la UI
  **/
@@ -76,6 +83,13 @@ function renderBook(book) {
 
     if (book.status === 'FINISHED') {
         bookRefs.removeFromFinish.addEventListener('click', addToReadingList);
+        if(book.rate==0) {
+          bookRefs.rate1.addEventListener('click', function(){rate(1)});
+          bookRefs.rate2.addEventListener('click', function(){rate(2)});
+          bookRefs.rate3.addEventListener('click', function(){rate(3)});
+          bookRefs.rate4.addEventListener('click', function(){rate(4)});
+          bookRefs.rate5.addEventListener('click', function(){rate(5)});
+        }
     }
 }
 
