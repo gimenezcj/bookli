@@ -180,7 +180,7 @@ describe('Features', () => {
             .click("#astar2")
             .pause(400);
         browser.expect
-            .element('.book__rate > span:nth-child(1)')
+            .element('#rate')
             .text.to.equal('Este libro Podria ser peor');
     });
 });
