@@ -160,3 +160,16 @@ describe('Detail view', () => {
             .text.to.equal('Volver a leer');
     });
 });
+
+describe('features', () => {
+    test('feature/#1: Acceso del icono a la pantalla principal', browser => {
+      browser
+          .url(BASE_URL)
+          .waitForElementVisible('body')
+          .assert.attributeContains(
+              '.brand > a:nth-child(1)',
+              'href',
+              '/'
+          );
+    });
+});
