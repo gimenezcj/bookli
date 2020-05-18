@@ -160,3 +160,13 @@ describe('Detail view', () => {
             .text.to.equal('Volver a leer');
     });
 });
+
+describe('Bugs', () => {
+    test('bug/#4: En la UI, en el detalle de un libro aparezca el país.', browser => {
+        browser
+            .url(BASE_URL + '/detail/1')
+            .waitForElementVisible('body')
+            .waitForElementVisible('#book__country');
+        browser.expect.element('#book__country').text.to.equal('Pais 1');
+    });
+});
