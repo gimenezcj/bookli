@@ -15,6 +15,7 @@ const initBooks = () => {
                 cover: '/assets/covers/el-aleph.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 1',
+                rate: 0,
             })
         )
         .then(() =>
@@ -30,6 +31,7 @@ const initBooks = () => {
                 cover: '/assets/covers/operacion-masacre.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 2',
+                rate: 0,
             })
         )
         .then(() =>
@@ -45,6 +47,7 @@ const initBooks = () => {
                 cover: '/assets/covers/pragmatic-programmer.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 3',
+                rate: 0,
             })
         )
         .then(() =>
@@ -61,6 +64,7 @@ const initBooks = () => {
                 cover: '/assets/covers/code-complete.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 4',
+                rate: 0,
             })
         )
         .then(() =>
@@ -76,6 +80,7 @@ const initBooks = () => {
                 cover: '/assets/covers/sherlock.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 5',
+                rate: 0,
             })
         )
         .then(() =>
@@ -91,6 +96,7 @@ const initBooks = () => {
                 cover: '/assets/covers/1984.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 6',
+                rate: 0,
             })
         )
         .then(() =>
@@ -106,6 +112,7 @@ const initBooks = () => {
                 cover: '/assets/covers/trial.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 7',
+                rate: 0,
             })
         )
         .then(() =>
@@ -121,6 +128,7 @@ const initBooks = () => {
                 cover: '/assets/covers/fahrenheit.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 8',
+                rate: 0,
             })
         )
         .then(() =>
@@ -136,6 +144,7 @@ const initBooks = () => {
                 cover: '/assets/covers/earnest.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 9',
+                rate: 0,
             })
         )
         .then(() =>
@@ -151,6 +160,7 @@ const initBooks = () => {
                 cover: '/assets/covers/animal-farm.jpg',
                 status: BookModel.status.AVAILABLE,
                 country: 'Pais 10',
+                rate: 0,
             })
         );
 };
