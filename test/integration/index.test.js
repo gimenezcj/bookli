@@ -441,3 +441,30 @@ test('Feature/#4: Agregar una calificacion a un libro en un estado que no sea FI
     expect(putRequest.status).toBe(400);
 
 });
+
+test('bug/#3: Al obtener un libro por API, el campo de generos sea un array no vacio', async () => {
+    const bookData = {
+        title: 'El Aleph',
+        synopsis:
+            'Este volumen reúne dieciocho relatos de Jorge Luis Borges, entre ellos quizá los más elogiados y repetidamente citados. Tanto «El inmortal» como «Los teólogos», «Deutsches Requiem» y «La espera» muestran las posibilidades expresivas de la «estética de la inteligencia» borgiana, inimitable fusión de mentalidad matemática, profundidad metafísica y captación poética del mundo.',
+        year: 1949,
+        publisher: 'Editorial Losada',
+        isbn: '9788499089515',
+        genres: ['Cuentos', 'Fantástico'],
+        authors: ['Jorge Luis Borges'],
+        cover: '/assets/el-aleph.jpg',
+    };
+
+    // Creamos el libro
+    const book =await BookModels.create(bookData);
+
+    //Consultamos mediante API
+    const URL = `${baseURL}/books/1`;
+    const putRequest = await fetch(URL, {method: 'GET',});
+    const bookAvailable = await putRequest.json();
+
+    //Verificamos que el genero no sea nulo y no este vacio
+    expect(bookAvailable.genres).present;
+    expect(bookAvailable.genres.length).not.toBe(0);
+});
+
