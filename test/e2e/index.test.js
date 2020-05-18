@@ -163,6 +163,7 @@ describe('Detail view', () => {
 
 describe('features', () => {
 
+<<<<<<< HEAD
     test('feature/#1: Acceso del icono a la pantalla principal', browser => {
       browser
           .url(BASE_URL)
@@ -181,6 +182,16 @@ describe('features', () => {
       browser.expect.element('a.book-link:nth-child(2) > div:nth-child(1) > div:nth-child(1)').to.have.css('opacity').which.equals('1');
       browser.moveToElement('a.book-link:nth-child(2) > div:nth-child(1) > div:nth-child(1)',10,10);
       browser.expect.element('a.book-link:nth-child(2) > div:nth-child(1) > div:nth-child(1)').to.have.css('opacity').which.equals('0.8');
+    });
+    
+    test('feature/#3: Hacer click en el boton atras y volver', browser => {
+      browser
+          .url(BASE_URL + '/detail/1')
+          .waitForElementVisible('body')
+          .waitForElementVisible('.book__actions [data-ref=back]')
+          .click('.book__actions [data-ref=back]')
+          .pause(400);
+        browser.assert.urlEquals(BASE_URL + '/');
     });
     
 });
