@@ -214,5 +214,25 @@ describe('features', () => {
             .element('#rate')
             .text.to.equal('Este libro Podria ser peor');
     });
+});
 
+describe('Bugs', () => {
+    test('bug/#2: Al hacer click en "Volver a leer", aparecen los botones "Dejar de leer" y "Lo termine!"', browser => {
+        browser
+            .url(BASE_URL + '/detail/1')
+            .waitForElementVisible('body')
+            .waitForElementVisible('.book__actions [data-ref=addToList]');
+        browser
+            .click('.book__actions [data-ref=addToList]')
+            .pause(400)
+            .waitForElementVisible('.book__actions [data-ref=addToFinish]');
+        browser
+            .click('.book__actions [data-ref=addToFinish]')
+            .pause(400)
+            .waitForElementVisible('.book__actions [data-ref=removeFromFinish]')
+            .click('.book__actions [data-ref=removeFromFinish]')
+            .pause(400);
+        browser.expect.element('.book__actions [data-ref=removeFromList]').text.to.equal('Dejar de leer');
+        browser.expect.element('.book__actions [data-ref=addToFinish]').text.to.equal('Lo termine!');
+    });
 });
