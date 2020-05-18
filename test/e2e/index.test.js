@@ -163,7 +163,6 @@ describe('Detail view', () => {
 
 describe('features', () => {
 
-<<<<<<< HEAD
     test('feature/#1: Acceso del icono a la pantalla principal', browser => {
       browser
           .url(BASE_URL)
@@ -193,5 +192,5 @@ describe('features', () => {
           .pause(400);
         browser.assert.urlEquals(BASE_URL + '/');
     });
-    
+
 });
