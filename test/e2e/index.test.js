@@ -162,6 +162,7 @@ describe('Detail view', () => {
 });
 
 describe('features', () => {
+
     test('feature/#1: Acceso del icono a la pantalla principal', browser => {
       browser
           .url(BASE_URL)
@@ -172,4 +173,14 @@ describe('features', () => {
               '/'
           );
     });
+
+    test('feature/#2: Opacidad 0.8 de la portada del libro al pasar sobre el', browser => {
+      browser
+          .url(BASE_URL)
+          .waitForElementVisible('body');
+      browser.expect.element('a.book-link:nth-child(2) > div:nth-child(1) > div:nth-child(1)').to.have.css('opacity').which.equals('1');
+      browser.moveToElement('a.book-link:nth-child(2) > div:nth-child(1) > div:nth-child(1)',10,10);
+      browser.expect.element('a.book-link:nth-child(2) > div:nth-child(1) > div:nth-child(1)').to.have.css('opacity').which.equals('0.8');
+    });
+    
 });
