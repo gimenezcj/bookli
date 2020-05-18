@@ -193,4 +193,26 @@ describe('features', () => {
         browser.assert.urlEquals(BASE_URL + '/');
     });
 
+    test('feature/#4: Deberia poder agregar la calificacion a un libro en estado FINALIZADO ', browser => {
+        browser
+            .url(BASE_URL + '/detail/1')
+            .waitForElementVisible('body')
+            .waitForElementVisible('.book__actions [data-ref=addToList]');
+        browser
+            .click('.book__actions [data-ref=addToList]')
+            .pause(400)
+            .waitForElementVisible('.book__actions [data-ref=addToFinish]');
+        browser
+            .click('.book__actions [data-ref=addToFinish]')
+            .pause(400)
+            .waitForElementVisible('.rate'); 
+        browser.waitForElementVisible('#astar2');
+        browser 
+            .click("#astar2")
+            .pause(400);
+        browser.expect
+            .element('#rate')
+            .text.to.equal('Este libro Podria ser peor');
+    });
+
 });
