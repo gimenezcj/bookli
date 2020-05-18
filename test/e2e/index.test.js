@@ -235,4 +235,14 @@ describe('Bugs', () => {
         browser.expect.element('.book__actions [data-ref=removeFromList]').text.to.equal('Dejar de leer');
         browser.expect.element('.book__actions [data-ref=addToFinish]').text.to.equal('Lo termine!');
     });
+
+    test('bug/#4: En la UI, en el detalle de un libro aparezca el país.', browser => {
+        browser
+            .url(BASE_URL + '/detail/1')
+            .waitForElementVisible('body')
+            .waitForElementVisible('#book__country');
+        browser.expect.element('#book__country').text.to.equal('Pais 1');
+    });
+
 });
+

@@ -468,3 +468,23 @@ test('bug/#3: Al obtener un libro por API, el campo de generos sea un array no v
     expect(bookAvailable.genres.length).not.toBe(0);
 });
 
+test('bug/#4: En el modelo aparezca el país', async () => {
+    const bookData = {
+        title: 'El Aleph',
+        synopsis:
+            'Este volumen reúne dieciocho relatos de Jorge Luis Borges, entre ellos quizá los más elogiados y repetidamente citados. Tanto «El inmortal» como «Los teólogos», «Deutsches Requiem» y «La espera» muestran las posibilidades expresivas de la «estética de la inteligencia» borgiana, inimitable fusión de mentalidad matemática, profundidad metafísica y captación poética del mundo.',
+        year: 1949,
+        publisher: 'Editorial Losada',
+        isbn: '9788499089515',
+        genres: ['Cuentos', 'Fantástico'],
+        authors: ['Jorge Luis Borges'],
+        cover: '/assets/el-aleph.jpg',
+    };
+
+    // Creamos el libro
+    const book =await BookModels.create(bookData);    
+
+    //Verificamos que aparezca el pais
+    expect(book.country).present;
+    expect(book.country).toBe(bookData.country);
+});
