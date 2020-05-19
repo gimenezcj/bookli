@@ -456,7 +456,7 @@ test('bug/#3: Al obtener un libro por API, el campo de generos sea un array no v
     };
 
     // Creamos el libro
-    const book =await BookModels.create(bookData);
+    await BookModels.create(bookData);
 
     //Consultamos mediante API
     const URL = `${baseURL}/books/1`;
