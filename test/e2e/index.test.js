@@ -244,13 +244,6 @@ describe('Bugs', () => {
         browser.expect.element('#book__country').text.to.equal('Pais 1');
     });
 
-    test ('bug/#1: placeholder del libro no es vacío', browser => {
-        browser
-            .url(BASE_URL + '/')
-            .waitForElementVisible('body')
-            .waitForElementVisible('.search [data-ref=search]');
 
-        browser.assert.domPropertyEquals('.search [data-ref=search]','placeholder','Título a buscar');
-    });
 });
 
