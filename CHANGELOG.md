@@ -4,9 +4,17 @@ Todos los cambios en el proyecto seran documentados en este archivo
 
 El formato se encuentra basado en [Keep a Changelog](http://keepachangelog.com/) y este proyecto adhiere a [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [Released]
 
-## [1.2.0] - 2020-07-05
+## [v1.3.0] - 2020-07-05
+
+### Hotfix
+
+- Se cambio el color de la aplicacion a solicitud del diseñador [@Javier Gimenez](https://github.com/gimenezcj).
+
+## [Released]
+
+## [v1.2.0] - 2020-07-05
 
 ### Added
 
