@@ -254,3 +254,12 @@ describe('Bugs', () => {
     });
 });
 
+describe('HotFix', () => {
+    test('hotfix: Cambio de color al cuerpo de la pagina"', browser => {
+        browser
+            .url(BASE_URL)
+            .waitForElementVisible('body');
+        browser
+            .assert.cssProperty('body','background-color','rgba(167, 206, 204, 1)');
+        });
+});
