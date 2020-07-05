@@ -263,3 +263,16 @@ describe('HotFix', () => {
             .assert.cssProperty('body','background-color','rgba(167, 206, 204, 1)');
         });
 });
+
+describe('Tareas', () => {
+    test('tarea/#2: Agregamos el icono de amazon y el link correspondiente a la pagina inicial"', browser => {
+        browser
+            .url(BASE_URL)
+            .waitForElementVisible('body');
+        browser
+            .assert.attributeContains('.amazon_link','href','https://www.amazon.es/comprar-libros-espa%C3%B1ol/b?ie=UTF8&node=599364031')
+            .assert.attributeContains('.amazon_image','src','/assets/amazon.png');
+            
+        });
+});
+
