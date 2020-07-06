@@ -6,6 +6,18 @@ El formato se encuentra basado en [Keep a Changelog](http://keepachangelog.com/)
 
 ## [Released]
 
+## [v1.4.1] - 2020-07-05
+
+### Changed
+
+- Se cambio el color del borde de la tarjeta a solicitud del diseñador [@Valeria Cascallares](https://github.com/Valeria-Lu).
+
+### Added
+
+- Se agrego un link en la pagina principal hacia la pagina de amazon [@Javier Gimenez](https://github.com/gimenezcj).
+
+## [Released]
+
 ## [v1.3.0] - 2020-07-05
 
 ### Hotfix
